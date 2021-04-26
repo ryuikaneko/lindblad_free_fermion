@@ -47,7 +47,7 @@ def main():
 
     fig = plt.figure(figsize=(4,3))
     cmap = plt.get_cmap("tab10")
-    plt.xlabel(r"$\mathrm{time}/(2N_{\mathrm{s}})$")
+    plt.xlabel(r"$\mathrm{time}/N_{\mathrm{s}}$")
     plt.ylabel(r"$\bar{S}/N_{\mathrm{s}}$")
     plt.plot(dat_ave_timeevol[:,1]/Ns,dat_ave_timeevol[:,4]/Ns,color=cmap(0))
     plt.fill_between(dat_ave_timeevol[:,1]/Ns,\
@@ -55,7 +55,7 @@ def main():
         dat_ave_timeevol[:,4]/Ns+dat_err_timeevol[:,4]/Ns,\
         alpha=0.5,edgecolor=cmap(0),facecolor=cmap(0))
     plt.tight_layout()
-    plt.xlim(0,1)
+    plt.xlim(0,)
     plt.ylim(0,)
     fig.savefig("fig_timeevol_ee.pdf")
     plt.close()
