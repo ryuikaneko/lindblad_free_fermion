@@ -7,10 +7,10 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description="quantum trajectory free fermion")
-    parser.add_argument("-Ns",metavar="Ns",dest="Ns",type=np.int,default=128,help="set Ns (default: 128)")
+    parser.add_argument("-Ns",metavar="Ns",dest="Ns",type=np.int64,default=128,help="set Ns (default: 128)")
     parser.add_argument("-dt",metavar="dt",dest="dt",type=np.float64,default=0.05,help="set dt (default: 0.05)")
     parser.add_argument("-gamma",metavar="gamma",dest="gamma",type=np.float64,default=0.01,help="set gamma (default: 0.01)")
-    parser.add_argument("-seed",metavar="seed",dest="seed",type=np.int,default=12345,help="set seed (default: 12345)")
+    parser.add_argument("-seed",metavar="seed",dest="seed",type=np.int64,default=12345,help="set seed (default: 12345)")
     return parser.parse_args()
 
 def make_ham(tij,Ns):
