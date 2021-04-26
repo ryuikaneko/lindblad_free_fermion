@@ -6,8 +6,8 @@
   - quantum jump evolution (QJ)
 
 - examples
-  - QSD: See Fig.4 in https://doi.org/10.21468/SciPostPhys.7.2.024
-    (our gamma/lambda=1 corresponds to their gamma=0.5)<br>
+  - QSD: See Fig.4 in https://doi.org/10.21468/SciPostPhys.7.2.024<br>
+    (our gamma/lambda=1 corresponds to their gamma=0.5)
   - time evolution of entanglement entropy<br>
     ![time evolution](./QSD/dat_example/fig_timeevol_ee_Ns512_gamma_all.png)
   - distance dependence of entanglement entropy<br>
