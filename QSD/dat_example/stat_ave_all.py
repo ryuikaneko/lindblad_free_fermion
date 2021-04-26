@@ -24,6 +24,8 @@ def main():
 
     list_all_ee_ave = []
     list_all_ee_err = []
+    list_all_te_ave = []
+    list_all_te_err = []
     for gamma in gammas:
         mask = [\
             np.abs(list_info[i][0]-Ns)<1e-10 and \
@@ -31,18 +33,20 @@ def main():
             np.abs(list_info[i][3]-dt)<1e-10 \
             for i in range(len(list_info))]
         Nsmp = np.sum(mask)
-        dat_timeevol = np.array(list_timeevol)[mask]
-        dat_dist_ee = np.array(list_dist_ee)[mask]
+        dat_timeevol = np.array(list_timeevol,dtype=object)[mask]
+        dat_dist_ee = np.array(list_dist_ee,dtype=object)[mask]
         dat_ave_timeevol = np.average(dat_timeevol,axis=0)
         dat_err_timeevol = np.sqrt(np.var(dat_timeevol,axis=0)/Nsmp)
         dat_ave_dist_ee = np.average(dat_dist_ee,axis=0)
         dat_err_dist_ee = np.sqrt(np.var(dat_dist_ee,axis=0)/Nsmp)
         list_all_ee_ave.append(dat_ave_dist_ee)
         list_all_ee_err.append(dat_err_dist_ee)
+        list_all_te_ave.append(dat_ave_timeevol)
+        list_all_te_err.append(dat_err_timeevol)
 
         fig = plt.figure(figsize=(4,3))
         cmap = plt.get_cmap("tab10")
-        plt.xlabel(r"$\mathrm{time}/(2N_{\mathrm{s}})$")
+        plt.xlabel(r"$\mathrm{time}/N_{\mathrm{s}}$")
         plt.ylabel(r"$\overline{S}/N_{\mathrm{s}}$")
         plt.plot(dat_ave_timeevol[:,1]/Ns,dat_ave_timeevol[:,4]/Ns,color=cmap(0))
         plt.fill_between(dat_ave_timeevol[:,1]/Ns,\
@@ -50,7 +54,7 @@ def main():
             dat_ave_timeevol[:,4]/Ns+dat_err_timeevol[:,4]/Ns,\
             alpha=0.5,edgecolor=cmap(0),facecolor=cmap(0))
         plt.tight_layout()
-        plt.xlim(0,1)
+        plt.xlim(0,2)
         plt.ylim(0,)
         fig.savefig("fig_timeevol_ee_Ns%d_gamma%.6f.pdf"%(Ns,gamma))
         plt.close()
@@ -112,6 +116,25 @@ def main():
     plt.ylim(0,1)
     fig.savefig("fig_collapse_ee_Ns%d_gamma_all.pdf"%(Ns))
     fig.savefig("fig_collapse_ee_Ns%d_gamma_all.png"%(Ns))
+    plt.close()
+
+    fig = plt.figure(figsize=(4,3))
+    cmap = plt.get_cmap("tab10")
+    plt.xlabel(r"$\mathrm{time}/N_{\mathrm{s}}$")
+    plt.ylabel(r"$\overline{S}/N_{\mathrm{s}}$")
+    for i,gamma in enumerate(gammas):
+        plt.plot(list_all_te_ave[i][:,1]/Ns,list_all_te_ave[i][:,4]/Ns,
+            color=cpick.to_rgba(i),label=r"$\gamma/\lambda=%.3f$"%(gamma))
+        plt.fill_between(list_all_te_ave[i][:,1]/Ns,\
+            list_all_te_ave[i][:,4]/Ns-list_all_te_err[i][:,4]/Ns,\
+            list_all_te_ave[i][:,4]/Ns+list_all_te_err[i][:,4]/Ns,\
+            alpha=0.5,edgecolor=cpick.to_rgba(i),facecolor=cpick.to_rgba(i))
+    plt.legend(bbox_to_anchor=(1,0),loc="lower right",borderaxespad=0.5)
+    plt.tight_layout()
+    plt.xlim(0,2)
+    plt.ylim(0,)
+    fig.savefig("fig_timeevol_ee_Ns%d_gamma_all.pdf"%(Ns))
+    fig.savefig("fig_timeevol_ee_Ns%d_gamma_all.png"%(Ns))
     plt.close()
 
 if __name__ == "__main__":

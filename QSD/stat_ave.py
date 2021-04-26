@@ -30,8 +30,8 @@ def main():
 #    print(mask)
     Nsmp = np.sum(mask)
 #    print(Nsmp)
-    dat_timeevol = np.array(list_timeevol)[mask]
-    dat_dist_ee = np.array(list_dist_ee)[mask]
+    dat_timeevol = np.array(list_timeevol,dtype=object)[mask]
+    dat_dist_ee = np.array(list_dist_ee,dtype=object)[mask]
 #    print(dat_timeevol)
 #    print(dat_dist_ee)
 
