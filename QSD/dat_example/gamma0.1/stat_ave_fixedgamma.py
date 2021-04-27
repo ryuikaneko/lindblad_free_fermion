@@ -115,6 +115,7 @@ def main():
 #    plt.xlim(,)
 #    plt.ylim(,)
     fig.savefig("fig_sizedep_ee_dt%.6f_gamma%.6f.pdf"%(dt,gamma))
+    fig.savefig("fig_sizedep_ee_dt%.6f_gamma%.6f.png"%(dt,gamma))
     plt.close()
 
 if __name__ == "__main__":
