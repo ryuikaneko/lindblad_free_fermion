@@ -57,22 +57,6 @@ def main():
 
         fig = plt.figure(figsize=(4,3))
         cmap = plt.get_cmap("tab10")
-        scale = np.sqrt(Ns)
-        plt.xlabel(r"$\mathrm{time}\times\gamma/\lambda\times 16/N_{\mathrm{s}}$")
-        plt.ylabel(r"$\overline{S_{[0,N_{\mathrm{s}}/2]}}/N_{\mathrm{s}}\times \sqrt{N_{\mathrm{s}}}$")
-        plt.plot(dat_ave_timeevol[:,1]*gamma*16/Ns,dat_ave_timeevol[:,4]/Ns*scale,color=cmap(0))
-        plt.fill_between(dat_ave_timeevol[:,1]*gamma*16/Ns,\
-            dat_ave_timeevol[:,4]/Ns*scale-dat_err_timeevol[:,4]/Ns*scale,\
-            dat_ave_timeevol[:,4]/Ns*scale+dat_err_timeevol[:,4]/Ns*scale,\
-            alpha=0.5,edgecolor=cmap(0),facecolor=cmap(0))
-        plt.tight_layout()
-        plt.xlim(0,1)
-        plt.ylim(0,)
-        fig.savefig("fig_timeevol_ee_scaled_Ns%d_dt%.6f_gamma%.6f.pdf"%(Ns,dt,gamma))
-        plt.close()
-
-        fig = plt.figure(figsize=(4,3))
-        cmap = plt.get_cmap("tab10")
         plt.xlabel(r"$\mathrm{time}\times\gamma/\lambda\times 16/N_{\mathrm{s}}$")
         plt.ylabel(r"$\overline{S_{[0,N_{\mathrm{s}}/16]}}/N_{\mathrm{s}}$")
         plt.plot(dat_ave_timeevol[:,1]*gamma*16/Ns,dat_ave_timeevol[:,5]/Ns,color=cmap(0))
