@@ -22,5 +22,6 @@
 
 - References
   - https://doi.org/10.21468/SciPostPhys.7.2.024 (hopping: lambda=1/2)
-  - https://arxiv.org/abs/2005.09722 (hopping: lambda=1)
+  - https://doi.org/10.1103/PhysRevLett.126.170602 (https://arxiv.org/abs/2005.09722) (hopping: lambda=1)
+  - https://arxiv.org/abs/2104.09118 (long-range hopping)
   - (hopping: lambda=1 in our notation)
