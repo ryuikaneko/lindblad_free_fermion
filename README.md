@@ -17,6 +17,8 @@
   - QSD: See Fig.1(c) in https://arxiv.org/abs/2005.09722<br>
     - size dependence of entanglement entropy at gamma/lambda=0.1<br>
       ![data collapse](./QSD/dat_example/gamma0.1/fig_sizedep_ee_dt0.050000_gamma0.100000.png)
+    - size dependence of entanglement entropy at gamma/lambda=0.25<br>
+      ![data collapse](./QSD/dat_example/gamma0.25/fig_sizedep_ee_dt0.050000_gamma0.250000.png)
 
 - References
   - https://doi.org/10.21468/SciPostPhys.7.2.024 (hopping: lambda=1/2)
