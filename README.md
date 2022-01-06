@@ -14,7 +14,7 @@
       ![distance dependence](./QSD/dat_example/Ns512/fig_dist_ee_Ns512_dt0.050000_gamma_all.png)
     - data collapse of entanglement entropy<br>
       ![data collapse](./QSD/dat_example/Ns512/fig_collapse_ee_Ns512_dt0.050000_gamma_all.png)
-  - QSD: See Fig.1(c) in https://arxiv.org/abs/2005.09722<br>
+  - QSD: See Fig.1(c) in https://doi.org/10.1103/PhysRevLett.126.170602 (https://arxiv.org/abs/2005.09722)<br>
     - size dependence of entanglement entropy at gamma/lambda=0.1<br>
       ![data collapse](./QSD/dat_example/gamma0.1/fig_sizedep_ee_dt0.050000_gamma0.100000.png)
     - size dependence of entanglement entropy at gamma/lambda=0.25<br>
@@ -23,5 +23,5 @@
 - References
   - https://doi.org/10.21468/SciPostPhys.7.2.024 (hopping: lambda=1/2)
   - https://doi.org/10.1103/PhysRevLett.126.170602 (https://arxiv.org/abs/2005.09722) (hopping: lambda=1)
-  - https://arxiv.org/abs/2104.09118 (long-range hopping)
+  - https://doi.org/10.1103/PhysRevLett.128.010603 (https://arxiv.org/abs/2104.09118), https://doi.org/10.1103/PhysRevLett.128.010604, https://doi.org/10.1103/PhysRevLett.128.010605 (long-range hopping)
   - (hopping: lambda=1 in our notation)
